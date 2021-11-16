@@ -63,3 +63,6 @@ steps = [ cleanup_step, breakup_step ]
 pipeline = Pipeline(workspace=ws, steps=steps)
 pipeline_run = experiment.submit(pipeline)
 pipeline_run.wait_for_completion()
+
+# Publish the pipeline
+published_pipeline = pipeline.publish('Final_pipeline')
