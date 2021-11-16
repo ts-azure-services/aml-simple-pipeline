@@ -5,11 +5,14 @@
 
 # Steps
 - In the ./scripts folder, create a ```sub.env``` file with the following line: ```SUB_ID=<your subscription id>```
-- Run the ```workflow.sh``` shell script. This will:
-	- Trigger the ```create-workspace-sprbac.sh``` shell script to provision the AML workspace.
+- The `Makefile` contains a general flow of the steps needed to run this basic pipeline. Added notes:
+	- Run the ```create-workspace-sprbac.sh``` shell script to provision the AML workspace.
 	- Create a cluster through the ```clusters.py``` script.
 	- Upload the dataset in the ./input-data folder through the ```datasets.py``` script.
-	- Trigger the ```basic_pipeline.py``` script which runs two Python Script steps.
+	- Run the ```basic_pipeline.py``` script which runs two Python Script steps and publishes the
+	  pipeline.
+	- Run the `trigger_pipeline.py` script to see how to query the published pipeline and then trigger it
+	  based on a timed cadence.
 - The two Python Script steps run in the ```basic_pipeline.py``` correspond to the ```cleanse.py``` and the
   ```breakup.py``` file respectively. These are simple data transformations on the uploaded dataset just to highlight
   inputs and outputs between pipeline steps.
