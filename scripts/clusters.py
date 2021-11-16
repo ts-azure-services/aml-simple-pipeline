@@ -13,7 +13,7 @@ def create_compute_cluster(workspace=None, compute_name=None):
                 min_nodes=0,
                 max_nodes=5)
         cpu_cluster = ComputeTarget.create(workspace, compute_name, compute_config)
-        print('Triggered creation of {compute_name} cluster.')
+        print(f'Triggered creation of {compute_name} cluster.')
         cpu_cluster.wait_for_completion(show_output=True)
 
 def main():
