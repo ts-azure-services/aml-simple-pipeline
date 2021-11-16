@@ -1,3 +1,4 @@
+from authentication import ws
 from azureml.pipeline.core import Pipeline, PublishedPipeline
 from azureml.pipeline.core.schedule import ScheduleRecurrence, Schedule
 
