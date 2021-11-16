@@ -10,7 +10,6 @@ pipeline_setup:
 	python ./scripts/basic_pipeline.py
 
 trigger_pipeline:
-	python trigger_pipeline.py
+	python ./scripts/trigger_pipeline.py
 
-all: install setup_run create_pipeline evaluation
-run: create_pipeline evaluation
+all: install setup_run pipeline_setup trigger_pipeline 
